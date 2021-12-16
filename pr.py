@@ -2,6 +2,11 @@ import openai
 from gtts import gTTS
 import os
 import subprocess as sp
+
+h=gTTS(text="how can i help",lang='en',slow=False)
+h.save("aud.mp3")
+os.system("aud.mp3")
+
 a=input("how can i help you")
 class coco:
     def __init__(self,text):
