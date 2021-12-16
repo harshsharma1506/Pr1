@@ -13,7 +13,7 @@ class coco:
         self.text=text
 
     def experiment(self,text):
-        openai.api_key=' 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 '
+        openai.api_key=' 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 '
         global response
         
         def response(self):
