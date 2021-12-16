@@ -1,19 +1,36 @@
 import openai
+import speech_recognition as sr 
 from gtts import gTTS
 import os
+import speech_recognition as sr
 import subprocess as sp
 
+
+
+    
 h=gTTS(text="how can i help",lang='en',slow=False)
 h.save("aud.mp3")
 os.system("aud.mp3")
 
-a=input("how can i help you")
+
+
+r= sr.Recognizer()
+with sr.Microphone() as source:
+    a_u=r.listen(source)
+    t_o=r.recognize_google(a_u)
+    try :
+        m= print("you said :{}".format(t_o))
+    except:
+        print("couldn't hear please try again")
+
+a=m
+
 class coco:
     def __init__(self,text):
         self.text=text
 
     def experiment(self,text):
-        openai.api_key=' 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 '
+        openai.api_key=' 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 '
         global response
         
         def response(self):
@@ -37,7 +54,7 @@ class coco2(coco):
         super().__init__(text)
 
     def answer(self):
-        output=sp.getoutput(self.experiment)
+        output=sp.getoutput(self.experiment(e))
         return self.speech(output)
 
     def main(self):
