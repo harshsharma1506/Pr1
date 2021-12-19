@@ -44,9 +44,9 @@ class coco:
         except:
             print("couldn't hear please try again")
     
-    a=input(speech_r(self=0))
+    a=speech_r(self=0)
 
-    w=input(experiment.__init__(output(self=0)))
+    w=experiment.__init__(output(self=0))
 
        
 
